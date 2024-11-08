@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import BPopUp from './page/BPopUp'
+import CHome from './page/CHome'
 
 function App() {
   return (
@@ -18,6 +20,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <body className="App-content">
+        test
+        <BPopUp/>
+        <CHome/>
+      </body>
     </div>
   );
 }
