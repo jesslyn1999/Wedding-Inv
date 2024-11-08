@@ -1,84 +1,138 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
-import imgBackgroundImageDefault from '../../../src/resources/APopUp/PopUp_BG.jpg'; // Adjust the path as needed
-import imgBackgroundTopImage from '../../../src/resources/APopUp/PopUp_Foto.png'; // Adjust the path as needed
-import imgLogo from '../../../src/resources/APopUp/PopUp_Logo.png';
+import imgBackgroundImageDefault from '../../../src/resources/BPopUp/PopUp_BG.jpg'; // Adjust the path as needed
+import imgBackgroundTopImage from '../../../src/resources/BPopUp/PopUp_Foto.png'; // Adjust the path as needed
+import imgLogo from '../../../src/resources/BPopUp/PopUp_Logo.png';
 
 const styles = {
     container: {
-        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        height: '100vh',
         backgroundImage: `url(${imgBackgroundImageDefault})`, // Replace with your image URL
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        overflow: 'hidden', // Prevent items from overflowing outside the container
+        position: 'relative',
+        alignItems: 'center'
     },
-    topContainer: {
-        height: '50vh',
-        maxWidth: '100%',
+    topBackground: {
+        width: '100%',
+        height: 'auto'
+    },
+    containerContext: {
+        // position: 'absolute', // Allows overlapping
         display: 'flex',
-        backgroundImage: `url(${imgBackgroundTopImage})`, 
-        backgroundPosition: 'center 20%', // Set the top offset, e.g., 20% from the top
-        backgroundSize: 'cover'
-    },
-    text: {
-        color: '#fff',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        padding: '16px 32px',
-        borderRadius: '8px'
+        flexDirection: 'column',
+        position: 'absolute', // Allows the items to overlap
+        padding: '20px', // Add padding to make the items visible
+        // backgroundColor: 'lightblue', // Background color for visibility
+        bottom: '0.4em',
+        marginBottom: '2em',
+        justifyContent: 'center'
     }
-};
-
-// Generate random text
-const randomText = () => {
-    const texts = [
-        'Welcome to our site!',
-        'Discover new opportunities!',
-        'Random motivational quote!',
-        'Stay positive, work hard, make it happen.',
-        'Your success journey begins here!'
-    ];
-    const randomIndex = Math.floor(Math.random() * texts.length);
-    return texts[randomIndex];
 };
 
 function BPopUp() {
     return (
         <Box sx={styles.container}>
-            <Box sx={styles.topContainer}>hey</Box>
-            heyyyyh
-            {/* <img
-                srcSet={`${imgLogo} 1x, ${imgLogo} 2x`} // Providing 1x and 2x for high-resolution displays
-                src={imgLogo}
-                alt={'married logo'}
-                loading="lazy"
-                style={{       // Set width
-                    height: '5%',       // Set height
-                    objectFit: 'cover',    // Crop the image to fit
-                    borderRadius: '8px',   // Optional: round corners
-                }} 
-            {/* <Typography variant="h4" sx={styles.text}>
-                You Are Invited to
-            </Typography>
-            <Typography variant="h4" sx={styles.text}>
-                Jimmy & Jessica
-            </Typography>
-            <Typography variant="h4" sx={styles.text}>
-                Wedding
-            </Typography>
-
-            <Typography variant="h4" sx={styles.text}>
-                Dear Mr./Mrs./Ms.
-            </Typography>
-            <Typography variant="h4" sx={styles.text}>
-                [Guest Name]
-            </Typography>
-
-            <Button variant="h4" sx={styles.text}>
-                [Guest Name]
-            </Button> */}
+            <Box sx={styles.topBackground}>
+                <img
+                    srcSet={`${imgBackgroundTopImage} 1x, ${imgBackgroundTopImage} 2x`} // Providing 1x and 2x for high-resolution displays
+                    src={imgBackgroundTopImage}
+                    alt={'background'}
+                    loading="lazy"
+                    style={{
+                        width: '100%',
+                        objectFit: 'cover' // Crop the image to fit
+                    }}
+                />
+            </Box>
+            <Box sx={styles.containerContext}>
+                <img
+                    srcSet={`${imgLogo} 1x, ${imgLogo} 2x`} // Providing 1x and 2x for high-resolution displays
+                    src={imgLogo}
+                    alt={'married logo'}
+                    loading="lazy"
+                    style={{
+                        height: 'auto', // Set height
+                        width: '10%',
+                        alignSelf: 'center',
+                        objectFit: 'cover', // Crop the image to fit
+                        minWidth: '50px',
+                        marginBottom: '1em'
+                    }}
+                />
+                <Typography
+                    sx={{
+                        fontFamily: 'Libre Baskerville',
+                        letterSpacing: '.5em',
+                        fontSize: '0.6em',
+                        textTransform: 'uppercase',
+                        marginBottom: '2.4em'
+                    }}
+                >
+                    You Are Invited to
+                </Typography>
+                <Typography
+                    sx={{
+                        fontFamily: 'Great Vibes',
+                        letterSpacing: '0.1em',
+                        fontSize: '2.6em',
+                        textTransform: 'capitalize',
+                        marginBottom: '0.3em'
+                    }}
+                >
+                    Jimmy & Jessica
+                </Typography>
+                <Typography
+                    sx={{
+                        fontFamily: 'Libre Baskerville',
+                        letterSpacing: '.5em',
+                        fontSize: '0.9em',
+                        textTransform: 'uppercase',
+                        marginBottom: '3.2em'
+                    }}
+                >
+                    Wedding
+                </Typography>
+                <Typography
+                    sx={{
+                        fontSize: '1em',
+                        textTransform: 'capitalize',
+                        marginBottom: '1em'
+                    }}
+                >
+                    Dear Mr./Mrs./Ms.
+                </Typography>
+                <Typography
+                    sx={{
+                        fontSize: '1em',
+                        textTransform: 'capitalize',
+                        marginBottom: '2.7em'
+                    }}
+                >
+                    [Guest Name]
+                </Typography>
+                <Box>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            fontFamily: 'Libre Baskerville',
+                            letterSpacing: '.2em',
+                            fontSize: '0.8em',
+                            textTransform: 'uppercase',
+                            marginBottom: '1.2em',
+                            padding: '0.5em 2em',
+                            borderRadius: '1em',
+                        }}
+                    >
+                        Open Invitation
+                    </Button>
+                </Box>
+            </Box>
         </Box>
     );
 }
