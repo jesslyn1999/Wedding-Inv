@@ -13,10 +13,56 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'Great Vibes';
     src: url('./Great_Vibes/GreatVibes-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alex Brush';
+    src: url('./Alex_Brush/AlexBrush-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Bookman Old Style';
+    src: url('./bookman-old-style/BOOKOS.TTF') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Bookman Old Style';
+    src: url('./bookman-old-style/BOOKOSB.TTF') format('truetype');
     font-weight: 700;
     font-style: normal;
+}
+
+/* Italic */
+@font-face {
+    font-family: 'Bookman Old Style';
+    src: url('./bookman-old-style/BOOKOSI.TTF') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'Bookman Old Style';
+    src: url('./bookman-old-style/BOOKOSBI.TTF') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Additional Variant (BKMNOS.ttf - Fett Kursiv or Bookman Old Style Extra Bold) */
+@font-face {
+    font-family: 'Bookman Old Style Extra';
+    src: url('./bookman-old-style/BKMNOS.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
 }

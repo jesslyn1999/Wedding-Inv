@@ -45,7 +45,7 @@ const styles = {
     iconDot: { fontSize: '0.7rem', margin: '0 0.3rem' }
 };
 
-function BPopUp() {
+function EQuotes2() {
     return (
         <Box sx={styles.container}>
             <Box sx={styles.containerBox}>
@@ -107,4 +107,4 @@ function BPopUp() {
     );
 }
 
-export default BPopUp;
+export default EQuotes2;

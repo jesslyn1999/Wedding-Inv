@@ -4,9 +4,11 @@ import { Box, Grid2 as Grid, Typography } from '@mui/material';
 import imgBackgroundImageDefault from '../../../src/resources/FGroomBride/GroomBride_BG.jpg';
 import imgBride from '../../../src/resources/FGroomBride/GroomBride_Bride.png';
 import imgGroom from '../../../src/resources/FGroomBride/GroomBride_Groom.png';
+import imgFlower from '../../../src/resources/FGroomBride/GroomBride_Flowers.png';
 
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import zIndex from '@mui/material/styles/zIndex';
 
 const styles = {
     container: {
@@ -50,11 +52,17 @@ const styles = {
         padding: '1rem',
         justifyContent: 'center',
         alignSelf: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: '1'
     },
     containerPhoto: {
         alignSelf: 'center',
         objectFit: 'cover'
+    },
+    containerFlower: {
+        position: 'absolute',
+        bottom: '-5rem',
+        left: '-5rem',
     },
     name: {
         fontFamily: 'Great Vibes',
@@ -90,9 +98,25 @@ const styles = {
     }
 };
 
-function BPopUp() {
+function FGroomBride() {
     return (
         <Box sx={styles.container}>
+            <Box sx={styles.containerFlower}>
+                <img
+                    srcSet={`${imgFlower} 1x, ${imgFlower} 2x`} // Providing 1x and 2x for high-resolution displays
+                    src={imgFlower}
+                    alt={'couple'}
+                    loading="lazy"
+                    style={{
+                        height: 'auto',
+                        width: '100%',
+                        maxWidth: '240px',
+                        alignSelf: 'center',
+                        objectFit: 'cover'
+                    }}
+                />
+            </Box>
+
             <Box sx={styles.containerHeader}>
                 <Typography
                     sx={{
@@ -177,4 +201,4 @@ function BPopUp() {
     );
 }
 
-export default BPopUp;
+export default FGroomBride;

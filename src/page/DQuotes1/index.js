@@ -49,7 +49,7 @@ const styles = {
     }
 };
 
-function BPopUp() {
+function DQuotes1() {
     return (
         <Box sx={styles.container}>
             <Box sx={styles.containerWindow}>
@@ -128,4 +128,4 @@ function BPopUp() {
     );
 }
 
-export default BPopUp;
+export default DQuotes1;
