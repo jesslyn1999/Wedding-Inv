@@ -13,6 +13,14 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Set up SSH for GitHub authentication
+ARG GITHUB_SSH_KEY_BASE64
+RUN mkdir -p /root/.ssh \
+    && echo "$GITHUB_SSH_KEY_BASE64" | base64 -d > /root/.ssh/id_rsa \
+    && chmod 600 /root/.ssh/id_rsa \
+    && ssh-keyscan github.com >> /root/.ssh/known_hosts
+
+    
 # Build the application for production
 RUN npm run build
 
